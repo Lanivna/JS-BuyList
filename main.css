@@ -1,3 +1,254 @@
-h1 {
-    color: red;
+body {
+    margin: 0;
+    background: #daaab5;
+    font-family: Lato, Arial, sans-serif;
+
+}
+
+.container {
+    display: block;
+    max-width: 1100px;
+    min-width: 900px;
+    padding-top: 100px;
+    margin-right: 133px;
+    margin-left: 133px;
+}
+
+.right-side {
+    box-sizing: border-box;
+    width: 40%;
+    float: right;
+    padding: 10px;
+}
+
+.left-side {
+    box-sizing: border-box;
+    width: 60%;
+    float: left;
+    padding: 10px;
+    box-shadow: aliceblue;
+}
+
+.container-list {
+    width: 100px;
+    background: white;
+    padding: 5px;
+
+}
+
+.inner {
+    background: white;
+    border-radius: 4px;
+    box-shadow: antiquewhite;
+}
+
+.input-holder {
+    padding: 10px;
+}
+
+.input-text {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 9px;
+}
+
+
+.item {
+    border-top: 1px solid rgb(111, 111, 111);
+    border-bottom: 1px rosybrown;
+}
+
+.item-name {
+    padding: 12px;
+    box-sizing: border-box;
+    width: 25%;
+    display: inline-block;
+    text-align: left;
+}
+
+.item-center-buttons {
+    box-sizing: border-box;
+    width: 37.5%;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+}
+
+.item-right-buttons {
+    box-sizing: border-box;
+    width: 37.5%;
+    display: inline-block;
+    text-align: right;
+    padding: 0 15px 0 0;
+}
+
+.my-button {
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 -0.25em 0 0 rgba(34,36,38, .15) inset;
+    position: relative;
+    border: none;
+}
+
+.my-button:hover {
+   filter: brightness(85%);
+}
+
+.my-button:active {
+    filter: brightness(75%);
+}
+
+.button-add {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20%;
+    border: 0px;
+    background: #2185D0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 11px;
+}
+
+.round-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 0px;
+    color: white;
+    font-weight: 800;
+}
+
+.button-minus {
+    background: #bf302e;
+}
+
+.button-plus{
+        background: #02a24c;
+}
+
+.button-bought{
+    background: #e6e6e6;
+    padding: 10px 20px 10px 20px;
+}
+
+.button-delete{
+    background: #ce0000;
+    border: none;
+    color: white;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 3px;
+    border-radius: 3px;
+    padding: 9px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.badge {
+    width: 120px;
+    heigth: 100px;
+
+    position: fixed;
+    bottom: -70px;
+    left: 20px;
+
+    background: #ac177c;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+
+    padding: 5px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+
+.badge:hover {
+    transform: translateY(-70px);
+    background: #a02fac;
+}
+
+.how-many-left
+{
+    border-top: 1px solid rgb(111, 111, 111);
+    padding: 10px;
+}
+
+.items-list
+{
+    border-top: 1px solid rgb(111, 111, 111);
+    padding: 10px;
+}
+
+.bought-items
+{
+    border-top: 1px solid rgb(111, 111, 111);
+    padding: 10px;
+}
+
+.empty
+{
+    border-top: 1px solid rgb(111, 111, 111);
+    padding: 10px;
+}
+
+.item-not-bought
+{
+    display: inline-block;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 3px;
+    background: #eaeaea;
+    font-size: small;
+    margin: 2px;
+}
+
+.orange-circle {
+    color: white;
+    display: inline-block;
+    border-radius: 50%;
+    background: #F2711C;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.label
+{
+    display: inline-block;
+}
+
+.one
+{
+    display: block;
+    max-width: 1100px;
+    min-width: 900px;
+    padding-top: 100px;
+    margin-right: 133px;
+    margin-left: 133px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline;
+    color: black;
+    font-size: small;
+    width: 5px !important;
+    height: 5px !important;
+    line-height: 1;
+    vertical-align: baseline;
+    margin: 0 .14285714em;
+    background-color: #E8E8E8;
+    background-image: none;
+    color: rgba(0,0,0,.6);
+    text-transform: none;
+    font-weight: 700;
+    border: 0 solid transparent;
+    border-radius: 3px;
+
 }
