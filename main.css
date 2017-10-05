@@ -8,10 +8,9 @@ body {
 .container {
     display: block;
     max-width: 1100px;
-    min-width: 900px;
+    min-width: 500px;
     padding-top: 100px;
-    margin-right: 133px;
-    margin-left: 133px;
+    margin: auto;
 }
 
 .right-side {
@@ -109,6 +108,7 @@ body {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     padding: 11px;
+    color: white;
 }
 
 .round-button {
@@ -121,11 +121,11 @@ body {
 }
 
 .button-minus {
-    background: #bf302e;
+    background: #DB2828;
 }
 
 .button-plus{
-        background: #02a24c;
+        background: #21BA45;
 }
 
 .button-bought{
@@ -134,7 +134,7 @@ body {
 }
 
 .button-delete{
-    background: #ce0000;
+    background: #DB2828;
     border: none;
     color: white;
     display: inline-block;
@@ -146,30 +146,10 @@ body {
     padding-right: 14px;
 }
 
-.badge {
-    width: 120px;
-    heigth: 100px;
-
-    position: fixed;
-    bottom: -70px;
-    left: 20px;
-
-    background: #ac177c;
-    color: white;
-    font-size: 25px;
-    text-align: center;
-
-    padding: 5px;
-
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: all 0.4s ease;
-}
-
 
 .badge:hover {
     transform: translateY(-70px);
-    background: #a02fac;
+    background: #4d26ac;
 }
 
 .how-many-left
@@ -211,10 +191,12 @@ body {
 .orange-circle {
     color: white;
     display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
     border-radius: 50%;
     background: #F2711C;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     text-align: center;
     font-size: 10px;
 }
@@ -222,6 +204,17 @@ body {
 .label
 {
     display: inline-block;
+}
+
+.label-count
+{
+    background-color: #E8E8E8;
+    display: inline-block;
+    color: black;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
 }
 
 .one
@@ -250,5 +243,101 @@ body {
     font-weight: 700;
     border: 0 solid transparent;
     border-radius: 3px;
+}
 
+@media (max-width: 500px) {
+    .left-side {
+        width: 100%;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+}
+
+.badge {
+    width: 100px;
+    height: 110px;
+
+    position: fixed;
+    bottom: -90px;
+    left: 20px;
+
+    font-size: 20px;
+    font-family:Tahoma;
+    background: #ac177c;
+    color: white;
+
+    text-align: center;
+
+    padding: 5px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.8s ease;
+}
+
+.badge.b-title
+{
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.badge .b-text
+{
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+
+@media print {
+    .b-title {
+        display: none;
+    }
+
+    .badge {
+        color: black;
+        transform: translateY(-50px);
+        border: 1px solid #000000;
+    }
+}
+
+button:after {
+    font-size: 0px;
+    content: "_";
+    position: absolute;
+
+    left: 50%;
+    bottom: -100%;
+    width: 0px;
+
+    transition: all 1s cubic-bezier(0.75,0.9,0.75,0);
+    border-radius: 10px ;
+
+    color: transparent;
+    background: white;
+}
+
+.tooltip {
+    border-bottom: 1px;
+}
+
+.tooltip::after {
+    background: rebeccapurple;
+    border-radius: 8px 8px 8px 8px;
+    color: white;
+    content: attr(data-tooltip);
+    margin-top: -25px;
+    margin-left: -38px;
+    padding-left: 7px;
+    padding-top: 3px;
+    padding-right: 7px;
+    padding-bottom: 3px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
 }

@@ -8,46 +8,47 @@
     <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 
+<body>
 <div class="container">
     <div class="left-side">
         <div class="inner">
             <div class="input-holder">
-                <input class="input-text" type="text" placeholder="Назва товару"><button class="button-add my-button" type="button">Додати</button>
+                <input class="input-text" type="text" placeholder="Назва товару"><span class data-tooltip="Додати у корзину?"><button class="button-add my-button" type="button"><b>Додати</b></button></span>
             </div>
             <div class="item" data-class="edit-mode">
                 <div class="item-name">
                     Помідорка
                 </div><div class="item-center-buttons">
-                    <button class="button-minus my-button round-button"  type="button">-</button>
-                    1
-                <button class="button-plus my-button round-button" type="button">+</button>
+                <span class="tooltip" data-tooltip="Зменшити"> <button class="button-minus my-button round-button"  type="button">−</button></span>
+               <span class="tooltip" data-tooltip="Кількість товару"> <span class="label-count">1</span></span>
+                <span class="tooltip" data-tooltip="Збільшити"> <button class="button-plus my-button round-button" type="button"><b>+</b></button></span>
                 </div><div class="item-right-buttons">
-                   <button class="button-bought my-button" type="button">Куплено</button>
-                   <button class="button-delete my-button" type="button">&#10006</button>
+                   <span class="tooltip" data-tooltip="Товар у кошику? Тисни сюди"> <button class="button-bought my-button" type="button">Куплено</button></span>
+                   <span class="tooltip" data-tooltip="Передумав купувати? Тисни сюди"> <button class="button-delete my-button" type="button">&#10006</button></span>
                 </div>
-            </div>
+                </div>
             <div class="item" data-class="edit-mode">
                 <div class="item-name">
                     Печиво
                 </div><div class="item-center-buttons">
-                <button class="button-minus my-button round-button"  type="button">-</button>
-                1
-                <button class="button-plus my-button round-button" type="button">+</button>
+                <span class="tooltip" data-tooltip="Зменшити"> <button class="button-minus my-button round-button"  type="button">−</button></span>
+                <span class="tooltip" data-tooltip="Кількість товару"> <span class="label-count">1</span></span>
+                <span class="tooltip" data-tooltip="Збільшити"> <button class="button-plus my-button round-button" type="button"><b>+</b></button></span>
             </div><div class="item-right-buttons">
-                <button class="button-bought my-button" type="button">Куплено</button>
-                <button class="button-delete my-button" type="button">&#10006</button>
+                <span class="tooltip" data-tooltip="Товар у кошику? Тисни сюди"> <button class="button-bought my-button" type="button">Куплено</button></span>
+                <span class="tooltip" data-tooltip="Передумав купувати? Тисни сюди"> <button class="button-delete my-button" type="button">&#10006</button></span>
             </div>
             </div>
             <div class="item" data-class="edit-mode">
                 <div class="item-name">
                     Сир
                 </div><div class="item-center-buttons">
-                <button class="button-minus my-button round-button"  type="button">-</button>
-                1
-                <button class="button-plus my-button round-button" type="button">+</button>
+                <span class="tooltip" data-tooltip="Зменшити"> <button class="button-minus my-button round-button"  type="button">−</button></span>
+                <span class="tooltip" data-tooltip="Кількість товару"> <span class="label-count">1</span></span>
+                <span class="tooltip" data-tooltip="Збільшити"> <button class="button-plus my-button round-button" type="button"><b>+</b></button></span>
             </div><div class="item-right-buttons">
-                <button class="button-bought my-button" type="button">Куплено</button>
-                <button class="button-delete my-button" type="button">&#10006</button>
+                <span class="tooltip" data-tooltip="Товар у кошику? Тисни сюди"> <button class="button-bought my-button" type="button">Куплено</button></span>
+                <span class="tooltip" data-tooltip="Передумав купувати? Тисни сюди"> <button class="button-delete my-button" type="button">&#10006</button></span>
             </div>
             </div>
 
@@ -62,14 +63,17 @@
             </div>
             <div class="items-list">
                 <div class="item-not-bought">
-                    <div class="label">Помідорка</div>
-                    <div class="orange-circle">1</div></div>
+                    <span>
+                    <span class="label">Помідорка</span>
+                    <span class="orange-circle">1</span>
+                    </span>
+                </div>
                 <div class="item-not-bought">
-                    <div class="label">Печиво</div>
-                    <div class="orange-circle">1</div></div>
+                    <span class="label">Печиво</span>
+                    <span class="orange-circle">1</span></div>
                 <div class="item-not-bought">
-                    <div class="label">Сир</div>
-                    <div class="orange-circle">1</div>
+                    <span class="label">Сир</span>
+                    <span class="orange-circle">1</span>
                 </div>
 
         </div>
