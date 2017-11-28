@@ -1,100 +1,82 @@
+
 <!DOCTYPE html>
 <html>
 <head lang="uk">
     <meta charset="UTF-8">
     <title>Buylist</title>
-
     <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
-
 <body>
 <div class="container">
     <div class="left-side">
         <div class="inner">
             <div class="input-holder">
-                <input class="input-text" type="text" placeholder="Назва товару">
-                <button class="button-add my-button" id="addingButton" type="button"><b>Додати</b></button>
+                <input class="input-text" maxlength="29" type="text" placeholder="Назва товару">
+                <button class="button-add my-button" type="button">Додати</button>
             </div>
-            <div class="list">
-                <template id="item-template">
-                    <div class="item" data-class="edit-mode">
-                        <div class="item-name">
-                            Помідорка
+
+            <template id="item-template">
+                <div class="item" data-class="edit-mode">
+                    <div class = item-name>
+                        <div class="item-name-new">
+                            Помідори
                         </div>
-                        <div class="item-center-buttons">
-                            <span class="tooltip" data-tooltip="Зменшити"> <button
-                                    class="button-minus my-button round-button" type="button">−</button></span>
-                            <span class="tooltip" data-tooltip="Кількість товару"> <span
-                                    class="label-count">1</span></span>
-                            <span class="tooltip" data-tooltip="Збільшити"> <button
-                                    class="button-plus my-button round-button" type="button"><b>+</b></button></span>
-                        </div>
-                        <div class="item-right-buttons">
-                            <span class="tooltip" data-tooltip="Товар у кошику? Тисни сюди"> <button
-                                    class="button-bought my-button" type="button">Куплено</button></span>
-                            <span class="tooltip" data-tooltip="Передумав купувати? Тисни сюди">
-                                <button
-                                        class="button-delete my-button"
-                                        type="button">&#10006
-                                </button>
-                            </span>
-                        </div>
+                        <input class="edit" maxlength="27" style="display: none">
                     </div>
-               </template>
-            </div>
+                    <div class="center-buttons">
+                        <span class="tooltip" data-tooltip="Зменшити"><button
+                                class="button-minus my-button round-button" type="button">−</button></span>
+                        <span class="count">1</span>
+                        <span class="tooltip" data-tooltip="Збільшити"><button
+                                class="button-plus my-button round-button" type="button">+</button></span>
+                    </div>
+                    <div class="right-buttons">
+                        <button class="button-bought my-button" type="button">Куплено</button>
+                        <button class="button-un-bought my-button" type="button">Не куплено</button>
+                        <span class="tooltip" data-tooltip="Передумали купувати?">
+                            <button class="button-delete my-button"
+                                    type="button">&#10006</button>
+                        </span>
+                    </div>
+                </div>
+            </template>
+
         </div>
     </div>
 
     <div class="right-side">
-        <div class="inner">
-            <div class="how-many-left">
-                <h3>Залишилося</h3>
+        <div class="inner-right">
+            <div class="left">
+                Залишилося
             </div>
-            <
             <div class="items-list">
-                <!--<template id="pr-template">-->
-                <div class="item-not-bought">
-                    <span>
-
-                    <span class="label">Огурец</span>
-
-                    <span class="orange-circle">1</span>
-
-                    </span>
-                </div>
-                <!--</template>-->
-            </div>
-            <div class="bought-items">
-                <h3>Куплено</h3>
-                <!--<template class="preview-template">-->
+                <template id="item-template-right">
                     <div class="item-not-bought">
-                    <span>
-                    <span class="label">Помідорка</span>
-                    <span class="orange-circle">1</span>
+                    <span class="mini-label">
+                        <span class="label">Помідорка</span>
+                        <span class="orange-circle">1</span>
                     </span>
                     </div>
-                <!--</template>-->
+                </template>
             </div>
-            <div class="empty">
-
+            <div class="bought-items">
+                Куплено
             </div>
+            <div class="what-was-bought"></div>
         </div>
-
     </div>
-
     <div class="badge">
         <div class="b-title">
             Buy List
         </div>
         <div class="b-text">
-            Created by Rusia
+            Created by:
+            <div>Rusia</div>
         </div>
     </div>
-
 </div>
-
-<script src="jquery-3.2.1.js"></script>
-<script src="main.js"></script>
-
+<script	type="text/javascript" src="jquery-3.2.1.js">	</script>
+<script	type="text/javascript" src="main.js">	</script>
 </body>
 </html>
+

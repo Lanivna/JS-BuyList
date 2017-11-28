@@ -1,116 +1,92 @@
-$(document).ready(function () {
+$(function() {
+    var $list = $(".inner");
+    var $list_right=$(".items-list");
+    var $list_bought_right=$(".what-was-bought");
+    var ONE_ROW_HTML = $("#item-template").html();
+    var ONE_SEGMENT = $("#item-template-right").html();
 
-    var LIST = $('.list');
-    var ITEM_TEMPLATE = $('#item-template').html();
-    var PREVIEW_TEMPLATE = $("#pr-template").html();
-
-
-    $("#addingButton").click(function () {
-        var name = $('.input-text').val();
-        if(name.replace(/\s/g, '').length > 0) {
-            alert("Namfsdfjsdfjn");
-            addItem(name);
-        }
-    });
-
-    function addItem(name) {
-        var bought = false;
-        var $item = $(ITEM_TEMPLATE);
-        var $preview = $(PREVIEW_TEMPLATE);
-        var fade_time = 100;
-
-
-        $item.find('.item-name').text(name);
-        $preview.find('.label').text(name);
-
-        $item.find('.button-delete').click(function () {
-            //$item.remove();
-            $item.slideUp(fade_time, function () {
-                $item.remove();
-            });
-            $preview.fadeOut(fade_time, function () {
-                $preview.remove();
-            });
-        });
-
+    function addItem(title) {
+        var $node = $(ONE_ROW_HTML);
+        var $node_right = $(ONE_SEGMENT);
         var quantity = 1;
+        var $quantity_label = $node.find(".count");
+        var $quantity_orange = $node_right.find(".orange-circle");
 
-        function edit_text(valid) {
-            var new_name
-        }
+        $node.find(".item-name-new").text(title);
+        $node_right.find(".label").text(title);
 
-        $item.find('.input-text').keypress(
-            function (e) {
-                if (e.which === 13) {
-                    addItem(($('.input-text').val()));
-                    return false;
-                }
-            }).focusout(function() {
+        $node.find(".button-minus").prop("disabled", true);
 
-        }).val('');
-
-        $item.find('.button-bought').click(function () {
-            bought = !bought;
-
-            if (bought) {
-                $item.find('.button-minus').hide();
-                $item.find('.button-plus').hide();
-                $item.find('.label-count').show();
-                $item.find('.button-bought').text('Не куплено');
-                $item.find('.button-bought').attr('data-tooltip', 'Забрати з Кулпеного');
-                $item.find('.button-delete').hide();
-                $item.find('.item-name').css('text-decoration', 'line-through');
-            } else {
-                //show
-                $item.find('.button-minus').show();
-                $item.find('.button-plus').show();
-                $item.find('.label-count').show();
-                $item.find('.button-bought').text('Куплено');
-                $item.find('.button-delete').show();
-                $item.find('.item-name').css('text-decoration', 'none');
-            }
-        });
-        $item.hide().prependTo(LIST).fadeIn(400);
-
-        $item.find('.button-plus').click(function () {
-
+        $node.find(".button-plus").click(function () {
+            $node.find(".button-minus").prop("disabled", false);
             quantity += 1;
-            $preview.find('.orange-circle').html(quantity);
+            $quantity_label.text(quantity);
+            $quantity_orange.text(quantity);
 
-            $item.find('.label-count').fadeOut(fade_time, function () {
-
-                $item.find('.label-count').html(quantity);
-                $item.find('.label-count').fadeIn(fade_time);
-                //TODO function as param in fadeIn
-
-
-
-            });
-            console.log(quantity)
         });
-        $item.find('.button-minus').click(function () {
-            var $preview = $(PREVIEW_TEMPLATE);
-            if(quantity>1) {
+
+        $node.find(".button-minus").click(function () {
+            if (quantity > 1) {
                 quantity -= 1;
-                $preview.find('.orange-circle').html(quantity);
-
-                $item.find('.label-count').fadeOut(fade_time, function () {
-
-                    $item.find('.label-count').html(quantity);
-                    $item.find('.label-count').fadeIn(fade_time);
-                    //TODO function as param in fadeIn
-
-
-                });
+                $quantity_label.text(quantity);
+                $quantity_orange.text(quantity);
             }
-            console.log(quantity)
+
         });
+
+        $node.find(".item-name-new").click(function () {
+            $node.find(".item-name-new").hide();
+            $node.find(".edit").show();
+            $node.find(".edit").val(title);
+        });
+
+        $node.find(".edit").focusout(function () {
+            $node.find(".item-name-new").show();
+            $node.find(".edit").hide();
+
+            title = $node.find(".edit").val();
+            $node.find(".item-name-new").text(title);
+            $node_right.find(".label").text(title);
+        });
+
+        $node.find(".button-delete").click(function () {
+            $node.slideUp(function () {
+                $node.remove();
+                $node_right.remove();
+            });
+        });
+
+        $node.find(".button-bought").click(function () {
+            $node.addClass("is-bought");
+            $list_bought_right.append($node_right);
+            $list_bought_right.addClass("bought");
+
+        });
+
+        $node.find(".button-un-bought").click(function () {
+            $node.removeClass("is-bought");
+            $list_right.append($node_right);
+
+        });
+
+        $list.append($node);
+        $node.hide();
+        $node.slideDown();
+        $list_right.append($node_right);
     }
-    addItem('Помідорка');
-    addItem('Сирок');
-    addItem('Печиво');
+
+    addItem("Помідорка");
+    addItem("Піченьки");
+    addItem("Сирок");
+
+    var $add_new = $(".input-text");
+
+    $(".button-add").click(function () {
+        var new_name = $add_new.val();
+        if(new_name.trim()) {
+            addItem(new_name);
+            $add_new.val("");
+            $add_new.focus();
+        }
     });
-
-
-
-
+});

@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    background: #daaab5;
-    font-family: Lato, Arial, sans-serif;
+    background: #daa8c7;
+    font-family: Lato, Arial, sans-serif;;
     font-size: 0;
 }
 
@@ -15,14 +15,14 @@ body {
 
 .right-side {
     box-sizing: border-box;
-    width: 40%;
+    width: 35%;
     float: right;
     padding: 10px;
 }
 
 .left-side {
     box-sizing: border-box;
-    width: 60%;
+    width: 65%;
     float: left;
     padding: 10px;
     box-shadow: aliceblue;
@@ -41,9 +41,17 @@ body {
     box-shadow: antiquewhite;
 }
 
+.inner-right {
+    background: white;
+    border-radius: 4px;
+    box-shadow: antiquewhite;
+}
+
 .input-holder {
     padding: 10px;
 }
+
+
 
 .input-text {
     display: inline-block;
@@ -52,7 +60,11 @@ body {
     padding: 9px;
 }
 
-
+.edit {
+    width: 100px;
+    display: inline-block;
+    padding: 4px;
+}
 .item {
     border-top: 1px solid rgb(111, 111, 111);
     border-bottom: 1px rosybrown;
@@ -63,11 +75,14 @@ body {
     box-sizing: border-box;
     width: 25%;
     display: inline-block;
-    text-align: left;
-    font-size: 15px;
 }
 
-.item-center-buttons {
+.item-name-new {
+    font-size: 15px;
+    text-align: left;
+}
+
+.center-buttons {
     box-sizing: border-box;
     width: 37.5%;
     display: inline-block;
@@ -75,7 +90,7 @@ body {
     padding: 0;
 }
 
-.item-right-buttons {
+.right-buttons {
     box-sizing: border-box;
     width: 37.5%;
     display: inline-block;
@@ -87,13 +102,14 @@ body {
     border-radius: 3px;
     cursor: pointer;
     outline: none;
-    box-shadow: 0 -0.25em 0 0 rgba(34,36,38, .15) inset;
+    box-shadow: 0 -0.25em 0 0 rgba(34, 36, 38, .15) inset;
     position: relative;
     border: none;
+    text-align: center;
 }
 
 .my-button:hover {
-   filter: brightness(85%);
+    filter: brightness(85%);
 }
 
 .my-button:active {
@@ -105,84 +121,108 @@ body {
     box-sizing: border-box;
     width: 20%;
     border: 0px;
-    background: #2185D0;
+    background: #207dd0;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     padding: 11px;
     color: white;
+    font-weight: 700;
 }
 
 .round-button {
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    border: 0px;
     color: white;
     font-weight: 800;
+
 }
 
 .button-minus {
-    background: #DB2828;
+    background: #bf302e;
 }
 
-.button-plus{
-        background: #21BA45;
+.count {
+    background-color: #E8E8E8;
+    display: inline-block;
+    color: black;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    font-size: 13px;
 }
 
-.button-bought{
+.button-plus {
+    background: green;
+}
+
+.button-bought {
     background: #e6e6e6;
     padding: 10px 20px 10px 20px;
 }
 
-.button-delete{
-    background: #DB2828;
+.item .button-un-bought {
+    background: #e6e6e6;
+    padding: 10px 20px 10px 20px;
+    display: none;
+}
+
+.item.is-bought .button-un-bought {
+    display: inline;
+}
+
+.item.is-bought .button-bought, .item.is-bought .button-delete, .item.is-bought .button-minus, .item.is-bought .button-plus{
+    display: none;
+}
+
+.item.is-bought .item-name{
+    text-decoration: line-through;
+}
+
+.bought .label, .bought .orange-circle{
+    text-decoration: line-through;
+}
+
+.button-delete {
+    background: #ac0a09;
     border: none;
     color: white;
     display: inline-block;
     box-sizing: border-box;
     margin-left: 3px;
     border-radius: 3px;
-    padding: 9px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding: 5px 10px 5px 10px;
 }
 
-
-.badge:hover {
-    transform: translateY(-70px);
-    background: #4d26ac;
-}
-
-.how-many-left
-{
-    border-top: 1px solid rgb(111, 111, 111);
-    padding: 5px;
+.left {
+    padding: 10px;
     font-size: 20px;
+    font-weight: 700;
 }
 
-.items-list
-{
+.items-list {
     border-top: 1px solid rgb(111, 111, 111);
     padding: 10px;
-    font-size: 15px;
 }
-
-.bought-items
-{
-    border-top: 1px solid rgb(111, 111, 111);
-    padding: 5px;
-    font-size: 20px;
-
-}
-
-.empty
-{
+.what-was-bought {
     border-top: 1px solid rgb(111, 111, 111);
     padding: 10px;
 }
 
-.item-not-bought
-{
+.bought-items {
+    border-top: 1px solid rgb(111, 111, 111);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.empty {
+    border-top: 1px solid rgb(111, 111, 111);
+    padding: 10px;
+}
+
+.item-not-bought {
     display: inline-block;
     padding: 5px;
     padding-left: 7px;
@@ -196,59 +236,51 @@ body {
 .orange-circle {
     color: white;
     display: inline-block;
-    padding: 5px;
-    box-sizing: border-box;
     border-radius: 50%;
     background: #F2711C;
     width: 20px;
     height: 20px;
     text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
     font-size: 10px;
 }
 
-.label
-{
+.label {
     display: inline-block;
 }
 
-.label-count
-{
-    background-color: #E8E8E8;
-    display: inline-block;
-    color: black;
-    border-radius: 5px;
-    position: relative;
+.badge {
+    width:150px;
+    height:110px;
+    position: fixed;
+    bottom: -70px;
+    left: 20px;
+    font-size: 15px;
+    background: purple;
+    color: white;
     text-align: center;
-    padding: 5px 10px 5px 10px;
-    font-size: 13px;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.4s ease;
 }
 
-.one
+.b-text
 {
-    display: block;
-    max-width: 1100px;
-    min-width: 900px;
-    padding-top: 100px;
-    margin-right: 133px;
-    margin-left: 133px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: inline;
-    color: black;
-    font-size: small;
-    width: 5px !important;
-    height: 5px !important;
-    line-height: 1;
-    vertical-align: baseline;
-    margin: 0 .14285714em;
-    background-color: #E8E8E8;
-    background-image: none;
-    color: rgba(0,0,0,.6);
-    text-transform: none;
-    font-weight: 700;
-    border: 0 solid transparent;
-    border-radius: 3px;
+    font-size: 20px;
+}
+
+.b-title
+{
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.badge:hover {
+    transform: translateY(-70px);
+    background: rebeccapurple;
 }
 
 @media (max-width: 500px) {
@@ -261,41 +293,6 @@ body {
     }
 }
 
-.badge {
-    width: 100px;
-    height: 110px;
-
-    position: fixed;
-    bottom: -90px;
-    left: 20px;
-
-    font-size: 20px;
-    font-family:Tahoma;
-    background: #ac177c;
-    color: white;
-
-    text-align: center;
-
-    padding: 5px;
-
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: all 0.8s ease;
-}
-
-.badge.b-title
-{
-    font-size: 20px;
-    padding-top: 5px;
-}
-
-.badge .b-text
-{
-    font-size: 15px;
-    margin-top: 25px;
-}
-
-
 @media print {
     .b-title {
         display: none;
@@ -303,52 +300,32 @@ body {
 
     .badge {
         color: black;
-        transform: translateY(-50px);
-        border: 1px solid #000000;
+        border: 1px solid blueviolet;
     }
 }
 
-button:after {
-    font-size: 10px;
-    content: "_";
-    position: absolute;
-
-    left: 50%;
-    bottom: -100%;
-    width: 0px;
-
-    transition: all 1s cubic-bezier(0.75,0.9,0.75,0);
-    border-radius: 10px ;
-
-    color: transparent;
-    background: white;
-}
-
 .tooltip {
-    font-size: 14px;
     border-bottom: 1px;
 }
 
 .tooltip::after {
-
-    background: rebeccapurple;
-    border-radius: 8px 8px 8px 8px;
+    background: purple;
+    border-radius: 8px;
     color: white;
+    font-size: small;
     content: attr(data-tooltip);
-
-    margin-top: -35px;
-    padding: 5px;
-    /*margin-top: -25px;*/
-    /*margin-left: -38px;*/
-    /*padding-left: 7px;*/
-    /*padding-top: 3px;*/
-    /*padding-right: 7px;*/
-    /*padding-bottom: 3px;*/
+    margin-top: -25px;
+    margin-left: -38px;
+    padding: 3px 7px 3px 7px;
     position: absolute;
     visibility: hidden;
+    transition:all 0.4s ease;
+
 }
 
 .tooltip:hover::after {
     opacity: 1;
     visibility: visible;
+    transform: translateY(-15px);
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
